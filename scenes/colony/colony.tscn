@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://jc3f18mlgo51"]
+
+[ext_resource type="Theme" uid="uid://c4pq52novvusq" path="res://resources/themes/button_text.tres" id="1_ix3fe"]
+[ext_resource type="Script" uid="uid://dpfnslu6hkwjd" path="res://scripts/colony/colony.gd" id="1_ntrno"]
+[ext_resource type="Theme" uid="uid://cv508bgx6ijpt" path="res://resources/themes/top_bar_text.tres" id="2_smy5i"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_smy5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntrno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m1vn"]
+bg_color = Color(0.443705, 0.594255, 0.880793, 1)
+
+[node name="Colony" type="Node2D"]
+script = ExtResource("1_ntrno")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Map" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_smy5i")
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buttons" type="Control" parent="CanvasLayer/MainMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Build" type="Button" parent="CanvasLayer/MainMenu/Buttons" groups=["MainMenuButtons"]]
+layout_mode = 0
+anchor_left = -0.15
+anchor_top = 22.85
+anchor_right = 15.85
+anchor_bottom = 27.1
+theme = ExtResource("1_ix3fe")
+text = "Build"
+metadata/_edit_use_anchors_ = true
+
+[node name="NPCs" type="Button" parent="CanvasLayer/MainMenu/Buttons" groups=["MainMenuButtons"]]
+layout_mode = 0
+anchor_left = 15.825
+anchor_top = 22.85
+anchor_right = 31.825
+anchor_bottom = 27.1
+theme = ExtResource("1_ix3fe")
+text = "NPCs(?)"
+metadata/_edit_use_anchors_ = true
+
+[node name="Expedition" type="Button" parent="CanvasLayer/MainMenu/Buttons" groups=["MainMenuButtons"]]
+layout_mode = 0
+anchor_left = 31.825
+anchor_top = 22.85
+anchor_right = 48.05
+anchor_bottom = 27.1
+theme = ExtResource("1_ix3fe")
+text = "Expedition"
+metadata/_edit_use_anchors_ = true
+
+[node name="TopBar" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0935185
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/TopBar"]
+layout_mode = 0
+anchor_left = 0.583854
+anchor_top = 0.118812
+anchor_right = 0.836979
+anchor_bottom = 0.960396
+theme_override_styles/background = SubResource("StyleBoxFlat_ntrno")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8m1vn")
+value = 50.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/TopBar"]
+layout_mode = 0
+anchor_left = 0.841146
+anchor_top = 0.128713
+anchor_right = 0.998958
+anchor_bottom = 0.970297
+theme = ExtResource("2_smy5i")
+text = "5,000/10,000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Energy" type="Label" parent="CanvasLayer/TopBar"]
+layout_mode = 0
+anchor_left = 0.382292
+anchor_top = 0.0594059
+anchor_right = 0.567708
+anchor_bottom = 0.980198
+theme = ExtResource("2_smy5i")
+text = "Colony Energy:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="CanvasLayer/TopBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.382292
+anchor_bottom = 0.960396
+theme = ExtResource("2_smy5i")
+text = "[COLONY NAME HERE]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Buildings" type="Node2D" parent="CanvasLayer"]
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/Buttons/Expedition" to="." method="_on_expedition_pressed"]

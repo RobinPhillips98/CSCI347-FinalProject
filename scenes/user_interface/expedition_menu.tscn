@@ -1,0 +1,766 @@
+[gd_scene load_steps=9 format=3 uid="uid://06q0k4bgs86j"]
+
+[ext_resource type="Script" uid="uid://byqniubed1h2a" path="res://scripts/user_interface/expedition_menu.gd" id="1_4dwrf"]
+[ext_resource type="Theme" uid="uid://c4pq52novvusq" path="res://resources/themes/button_text.tres" id="1_bb0vt"]
+[ext_resource type="Theme" uid="uid://bgpv23m6jitmg" path="res://resources/themes/menu_text.tres" id="1_get17"]
+[ext_resource type="ButtonGroup" uid="uid://dtkw40f6hviuv" path="res://resources/button_groups/expedition_menu.tres" id="4_v4thc"]
+[ext_resource type="Theme" uid="uid://cv508bgx6ijpt" path="res://resources/themes/top_bar_text.tres" id="6_0g0n1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qvsit"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4dwrf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bb0vt"]
+
+[node name="ExpeditionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4dwrf")
+debug_level_select = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_qvsit")
+
+[node name="DestinationsMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 0.578646
+anchor_bottom = 0.851852
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationOne" type="Control" parent="DestinationsMenu"]
+layout_mode = 1
+anchor_right = 0.524753
+anchor_bottom = 0.323913
+offset_right = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996454
+anchor_bottom = 0.173367
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 50
+text = "DESTINATION ONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Explorer" type="Control" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 1
+anchor_left = 0.380789
+anchor_top = 0.217391
+anchor_right = 0.991424
+anchor_bottom = 0.789298
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="DestinationsMenu/DestinationOne/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629214
+anchor_bottom = 0.204678
+offset_right = -1.52588e-05
+theme = ExtResource("1_get17")
+text = "Explorer: John Doe"
+metadata/_edit_use_anchors_ = true
+
+[node name="Benefit" type="Label" parent="DestinationsMenu/DestinationOne/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235979
+anchor_right = 0.603933
+anchor_bottom = 0.949429
+offset_right = 1.52588e-05
+grow_vertical = 2
+theme = ExtResource("1_get17")
+text = "Benefit: Adds +5 damage to all weapons"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Face" type="TextureRect" parent="DestinationsMenu/DestinationOne/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617978
+anchor_top = 0.18109
+anchor_right = 0.957163
+anchor_bottom = 0.833858
+offset_left = -1.52588e-05
+offset_right = -119.75
+offset_bottom = -110.25
+scale = Vector2(120.75, 111.25)
+texture = SubResource("PlaceholderTexture2D_4dwrf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Label" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.524871
+anchor_bottom = 0.907692
+offset_right = -1.52588e-05
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Resources: 1000¤"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirement" type="Label" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.892308
+anchor_right = 0.528302
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Required Energy: 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationPreview" type="TextureRect" parent="DestinationsMenu/DestinationOne"]
+layout_mode = 0
+anchor_left = 0.0428817
+anchor_top = 0.217391
+anchor_right = 0.356346
+anchor_bottom = 0.775084
+offset_right = -181.75
+offset_bottom = -165.75
+scale = Vector2(182.75, 166.75)
+texture = SubResource("PlaceholderTexture2D_bb0vt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="DestinationsMenu/DestinationOne" groups=["destination_menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64494
+anchor_top = 0.763077
+anchor_right = 0.950257
+anchor_bottom = 1.0
+offset_top = -5.2123
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationTwo" type="Control" parent="DestinationsMenu"]
+layout_mode = 1
+anchor_top = 0.341304
+anchor_right = 0.524753
+anchor_bottom = 0.665217
+offset_right = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996454
+anchor_bottom = 0.173367
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 50
+text = "DESTINATION TWO"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Explorer" type="Control" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 1
+anchor_left = 0.380789
+anchor_top = 0.217391
+anchor_right = 0.991424
+anchor_bottom = 0.789298
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="DestinationsMenu/DestinationTwo/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629214
+anchor_bottom = 0.204678
+offset_right = -1.52588e-05
+theme = ExtResource("1_get17")
+text = "Explorer: John Doe"
+metadata/_edit_use_anchors_ = true
+
+[node name="Benefit" type="Label" parent="DestinationsMenu/DestinationTwo/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235979
+anchor_right = 0.603933
+anchor_bottom = 0.949429
+offset_right = 1.52588e-05
+grow_vertical = 2
+theme = ExtResource("1_get17")
+text = "Benefit: Adds +5 damage to all weapons"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Face" type="TextureRect" parent="DestinationsMenu/DestinationTwo/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617978
+anchor_top = 0.18109
+anchor_right = 0.957163
+anchor_bottom = 0.833858
+offset_left = -1.52588e-05
+offset_right = -119.75
+offset_bottom = -110.25
+scale = Vector2(120.75, 111.25)
+texture = SubResource("PlaceholderTexture2D_4dwrf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Label" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.524871
+anchor_bottom = 0.907692
+offset_right = -1.52588e-05
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Resources: 1000¤"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirement" type="Label" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.892308
+anchor_right = 0.528302
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Required Energy: 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationPreview" type="TextureRect" parent="DestinationsMenu/DestinationTwo"]
+layout_mode = 0
+anchor_left = 0.0428817
+anchor_top = 0.217391
+anchor_right = 0.356346
+anchor_bottom = 0.775084
+offset_right = -181.75
+offset_bottom = -165.75
+scale = Vector2(182.75, 166.75)
+texture = SubResource("PlaceholderTexture2D_bb0vt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="DestinationsMenu/DestinationTwo" groups=["destination_menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64494
+anchor_top = 0.763077
+anchor_right = 0.950257
+anchor_bottom = 1.0
+offset_top = -5.2123
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationThree" type="Control" parent="DestinationsMenu"]
+layout_mode = 1
+anchor_top = 0.688043
+anchor_right = 0.524753
+anchor_bottom = 1.01196
+offset_right = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996454
+anchor_bottom = 0.173367
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 50
+text = "DESTINATION THREE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Explorer" type="Control" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 1
+anchor_left = 0.380789
+anchor_top = 0.217391
+anchor_right = 0.991424
+anchor_bottom = 0.789298
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="DestinationsMenu/DestinationThree/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629214
+anchor_bottom = 0.204678
+offset_right = -1.52588e-05
+theme = ExtResource("1_get17")
+text = "Explorer: John Doe"
+metadata/_edit_use_anchors_ = true
+
+[node name="Benefit" type="Label" parent="DestinationsMenu/DestinationThree/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235979
+anchor_right = 0.603933
+anchor_bottom = 0.949429
+offset_right = 1.52588e-05
+grow_vertical = 2
+theme = ExtResource("1_get17")
+text = "Benefit: Adds +5 damage to all weapons"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Face" type="TextureRect" parent="DestinationsMenu/DestinationThree/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617978
+anchor_top = 0.181091
+anchor_right = 0.957163
+anchor_bottom = 0.83385
+offset_left = -1.52588e-05
+offset_right = -119.75
+offset_bottom = -110.25
+scale = Vector2(120.75, 111.25)
+texture = SubResource("PlaceholderTexture2D_4dwrf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Label" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.524871
+anchor_bottom = 0.907692
+offset_right = -1.52588e-05
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Resources: 1000¤"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirement" type="Label" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.892308
+anchor_right = 0.528302
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Required Energy: 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationPreview" type="TextureRect" parent="DestinationsMenu/DestinationThree"]
+layout_mode = 0
+anchor_left = 0.0428817
+anchor_top = 0.217391
+anchor_right = 0.356346
+anchor_bottom = 0.775084
+offset_right = -181.75
+offset_bottom = -165.75
+scale = Vector2(182.75, 166.75)
+texture = SubResource("PlaceholderTexture2D_bb0vt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="DestinationsMenu/DestinationThree" groups=["destination_menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64494
+anchor_top = 0.763077
+anchor_right = 0.950257
+anchor_bottom = 1.0
+offset_top = -5.2123
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationFour" type="Control" parent="DestinationsMenu"]
+layout_mode = 1
+anchor_left = 0.539154
+anchor_top = 0.157609
+anchor_right = 1.06391
+anchor_bottom = 0.481522
+offset_right = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996454
+anchor_bottom = 0.173367
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 50
+text = "DESTINATION FOUR"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Explorer" type="Control" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 1
+anchor_left = 0.380789
+anchor_top = 0.217391
+anchor_right = 0.991424
+anchor_bottom = 0.789298
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="DestinationsMenu/DestinationFour/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629214
+anchor_bottom = 0.204678
+offset_right = -1.52588e-05
+theme = ExtResource("1_get17")
+text = "Explorer: John Doe"
+metadata/_edit_use_anchors_ = true
+
+[node name="Benefit" type="Label" parent="DestinationsMenu/DestinationFour/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235979
+anchor_right = 0.603933
+anchor_bottom = 0.949429
+offset_right = 1.52588e-05
+grow_vertical = 2
+theme = ExtResource("1_get17")
+text = "Benefit: Adds +5 damage to all weapons"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Face" type="TextureRect" parent="DestinationsMenu/DestinationFour/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617978
+anchor_top = 0.18109
+anchor_right = 0.957163
+anchor_bottom = 0.833858
+offset_left = -1.52588e-05
+offset_right = -119.75
+offset_bottom = -110.25
+scale = Vector2(120.75, 111.25)
+texture = SubResource("PlaceholderTexture2D_4dwrf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Label" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.524871
+anchor_bottom = 0.907692
+offset_right = -1.52588e-05
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Resources: 1000¤"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirement" type="Label" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.892308
+anchor_right = 0.528302
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Required Energy: 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationPreview" type="TextureRect" parent="DestinationsMenu/DestinationFour"]
+layout_mode = 0
+anchor_left = 0.0428817
+anchor_top = 0.217391
+anchor_right = 0.356346
+anchor_bottom = 0.775084
+offset_right = -181.75
+offset_bottom = -165.75
+scale = Vector2(182.75, 166.75)
+texture = SubResource("PlaceholderTexture2D_bb0vt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="DestinationsMenu/DestinationFour" groups=["destination_menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64494
+anchor_top = 0.763077
+anchor_right = 0.950257
+anchor_bottom = 1.0
+offset_top = -5.2123
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationFive" type="Control" parent="DestinationsMenu"]
+layout_mode = 1
+anchor_left = 0.539154
+anchor_top = 0.53913
+anchor_right = 1.06391
+anchor_bottom = 0.863044
+offset_right = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.996454
+anchor_bottom = 0.173367
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 50
+text = "DESTINATION FIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Explorer" type="Control" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 1
+anchor_left = 0.380789
+anchor_top = 0.217391
+anchor_right = 0.991424
+anchor_bottom = 0.789298
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="DestinationsMenu/DestinationFive/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629214
+anchor_bottom = 0.204678
+offset_right = -1.52588e-05
+theme = ExtResource("1_get17")
+text = "Explorer: John Doe"
+metadata/_edit_use_anchors_ = true
+
+[node name="Benefit" type="Label" parent="DestinationsMenu/DestinationFive/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235979
+anchor_right = 0.603933
+anchor_bottom = 0.949429
+offset_right = 1.52588e-05
+grow_vertical = 2
+theme = ExtResource("1_get17")
+text = "Benefit: Adds +5 damage to all weapons"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Face" type="TextureRect" parent="DestinationsMenu/DestinationFive/Explorer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617978
+anchor_top = 0.18109
+anchor_right = 0.957163
+anchor_bottom = 0.833856
+offset_left = -1.52588e-05
+offset_right = -119.75
+offset_bottom = -110.25
+scale = Vector2(120.75, 111.25)
+texture = SubResource("PlaceholderTexture2D_4dwrf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Label" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.524871
+anchor_bottom = 0.907692
+offset_right = -1.52588e-05
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Resources: 1000¤"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Requirement" type="Label" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.892308
+anchor_right = 0.528302
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("1_get17")
+text = "Required Energy: 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationPreview" type="TextureRect" parent="DestinationsMenu/DestinationFive"]
+layout_mode = 0
+anchor_left = 0.0428817
+anchor_top = 0.217391
+anchor_right = 0.356346
+anchor_bottom = 0.775084
+offset_right = -181.75
+offset_bottom = -165.75
+scale = Vector2(182.75, 166.75)
+texture = SubResource("PlaceholderTexture2D_bb0vt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Select" type="Button" parent="DestinationsMenu/DestinationFive" groups=["destination_menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64494
+anchor_top = 0.763077
+anchor_right = 0.950257
+anchor_bottom = 1.0
+offset_top = -5.2123
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="MainButtons" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.863889
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Destinations" type="Button" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0136059
+anchor_right = 0.384896
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_bb0vt")
+toggle_mode = true
+button_group = ExtResource("4_v4thc")
+text = "Destinations"
+metadata/_edit_use_anchors_ = true
+
+[node name="Equipment" type="Button" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384896
+anchor_top = 0.0136059
+anchor_right = 0.767708
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_bb0vt")
+toggle_mode = true
+button_group = ExtResource("4_v4thc")
+text = "Equipment"
+metadata/_edit_use_anchors_ = true
+
+[node name="Launch" type="Button" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.767187
+anchor_top = 0.0136054
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_bb0vt")
+text = "LAUNCH!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.798958
+anchor_right = 1.0
+anchor_bottom = 0.134259
+grow_horizontal = 0
+theme = ExtResource("1_bb0vt")
+text = "<-- Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="DestinationLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.572917
+anchor_top = 0.756481
+anchor_right = 1.00052
+anchor_bottom = 0.82963
+theme = ExtResource("6_0g0n1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Destination: Select a destination..."
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="DestinationsMenu/DestinationOne/Select" to="." method="_destination_one_selected"]
+[connection signal="toggled" from="MainButtons/Destinations" to="." method="_on_destinations_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
