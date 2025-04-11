@@ -508,3 +508,5 @@ shape = SubResource("RectangleShape2D_fdfoy")
 [node name="UserInterface" parent="." instance=ExtResource("2_qhqgy")]
 
 [node name="Gun" parent="." instance=ExtResource("4_dqkch")]
+
+[connection signal="health_changed" from="." to="UserInterface" method="_on_player_health_changed"]

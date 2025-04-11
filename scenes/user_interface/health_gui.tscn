@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://beoyc5o21by0v"]
+
+[ext_resource type="Texture2D" uid="uid://dgbm7x2qpluvt" path="res://art/user_interface/placeholder_health.png" id="1_5wny4"]
+[ext_resource type="Script" uid="uid://ded0c1enyj2k2" path="res://scripts/user_interface/health_gui.gd" id="1_oyjub"]
+
+[node name="health_gui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.0333333
+anchor_bottom = 0.0592593
+script = ExtResource("1_oyjub")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_5wny4")
+centered = false
+hframes = 4
+frame = 3
