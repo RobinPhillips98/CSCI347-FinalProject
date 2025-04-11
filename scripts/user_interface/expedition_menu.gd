@@ -5,7 +5,7 @@ var selected_level: PackedScene
 var destination: String = "Select a destination..."
 @export var debug_level_select: bool
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_destination()
 
 func _on_destinations_toggled(toggled_on: bool) -> void:
@@ -27,5 +27,13 @@ func update_destination() -> void:
 func _destination_one_selected() -> void:
 	if false or debug_level_select:
 		destination = "Destination One"
+		selected_level = preload("res://scenes/player.tscn")
+	else:
+		return
+
+
+func _on_launch_pressed() -> void:
+	if selected_level:
+		get_tree().change_scene_to_packed(selected_level)
 	else:
 		return
