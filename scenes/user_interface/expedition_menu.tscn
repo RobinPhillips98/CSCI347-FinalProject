@@ -763,4 +763,5 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="DestinationsMenu/DestinationOne/Select" to="." method="_destination_one_selected"]
 [connection signal="toggled" from="MainButtons/Destinations" to="." method="_on_destinations_toggled"]
+[connection signal="pressed" from="MainButtons/Launch" to="." method="_on_launch_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
