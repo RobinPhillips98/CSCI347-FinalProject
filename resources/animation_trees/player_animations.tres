@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=54 format=3 uid="uid://cmiuertcdm6xm"]
+[gd_resource type="AnimationNodeStateMachine" load_steps=53 format=3 uid="uid://cmiuertcdm6xm"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1xfn"]
 animation = &"left_attack"
@@ -209,10 +209,6 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1bdrm"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dnvgi"]
 advance_mode = 2
 advance_condition = &"attack"
@@ -264,5 +260,5 @@ states/idle/node = SubResource("AnimationNodeBlendSpace2D_bj30b")
 states/idle/position = Vector2(351, 100)
 states/move/node = SubResource("AnimationNodeBlendSpace2D_cs1tg")
 states/move/position = Vector2(351, 236)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_2dvfe"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_dyxiw"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_p2xpi"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_6xet6"), "move", "dash", SubResource("AnimationNodeStateMachineTransition_udee1"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_nmsji"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_xxv08"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_y8hu5"), "dash", "hurt", SubResource("AnimationNodeStateMachineTransition_oc1h8"), "move", "hurt", SubResource("AnimationNodeStateMachineTransition_e6r6m"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_874r4"), "hurt", "move", SubResource("AnimationNodeStateMachineTransition_pw4dw"), "hurt", "dash", SubResource("AnimationNodeStateMachineTransition_y3tm4"), "hurt", "death", SubResource("AnimationNodeStateMachineTransition_7pfxj"), "death", "End", SubResource("AnimationNodeStateMachineTransition_1bdrm"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_dnvgi"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_xbu7e"), "hurt", "attack", SubResource("AnimationNodeStateMachineTransition_wxadw"), "dash", "attack", SubResource("AnimationNodeStateMachineTransition_5yhj3"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_u1xfn"), "attack", "move", SubResource("AnimationNodeStateMachineTransition_qlb1n"), "attack", "dash", SubResource("AnimationNodeStateMachineTransition_ycwal"), "attack", "hurt", SubResource("AnimationNodeStateMachineTransition_00fx5")]
-graph_offset = Vector2(-594, -29)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_2dvfe"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_dyxiw"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_p2xpi"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_6xet6"), "move", "dash", SubResource("AnimationNodeStateMachineTransition_udee1"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_nmsji"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_xxv08"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_y8hu5"), "dash", "hurt", SubResource("AnimationNodeStateMachineTransition_oc1h8"), "move", "hurt", SubResource("AnimationNodeStateMachineTransition_e6r6m"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_874r4"), "hurt", "move", SubResource("AnimationNodeStateMachineTransition_pw4dw"), "hurt", "dash", SubResource("AnimationNodeStateMachineTransition_y3tm4"), "hurt", "death", SubResource("AnimationNodeStateMachineTransition_7pfxj"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_dnvgi"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_xbu7e"), "hurt", "attack", SubResource("AnimationNodeStateMachineTransition_wxadw"), "dash", "attack", SubResource("AnimationNodeStateMachineTransition_5yhj3"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_u1xfn"), "attack", "move", SubResource("AnimationNodeStateMachineTransition_qlb1n"), "attack", "dash", SubResource("AnimationNodeStateMachineTransition_ycwal"), "attack", "hurt", SubResource("AnimationNodeStateMachineTransition_00fx5")]
+graph_offset = Vector2(212, -13)
