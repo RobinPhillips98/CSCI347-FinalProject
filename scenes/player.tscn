@@ -495,11 +495,11 @@ parameters/conditions/hurt = false
 parameters/conditions/idle = false
 parameters/conditions/moving = false
 parameters/attack/blend_position = Vector2(0, 0)
-parameters/dash/blend_position = Vector2(-0.406633, 0.445824)
+parameters/dash/blend_position = Vector2(0, 0)
 parameters/death/blend_position = Vector2(0, 0)
 parameters/hurt/blend_position = Vector2(0, 0)
-parameters/idle/blend_position = Vector2(-0.355662, -0.174888)
-parameters/move/blend_position = Vector2(0.00144196, -0.0273632)
+parameters/idle/blend_position = Vector2(0, 0)
+parameters/move/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -6)
