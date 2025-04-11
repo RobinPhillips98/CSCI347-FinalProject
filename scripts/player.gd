@@ -14,24 +14,23 @@ var stamina_regen_rate: float = 25
 var ammo: int = max_ammo
 
 # Movement
-const SPEED = 600
-const DASH_SPEED = SPEED * 4
+const SPEED = 1000
+const DASH_DISTANCE = 1000
 const DASH_TIME = 0.4
 
 # State Control
 var dashing: bool = false
 var can_move: bool = true
 signal health_changed
+var mouse_direction
 
 # Node References
 @onready var gun = $Gun
 @onready var animation_tree = $AnimationTree
-@onready var animation_player = $AnimationPlayer
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
-	
+
 func _process(_delta: float) -> void:
 	input()
 	
@@ -39,18 +38,17 @@ func _process(_delta: float) -> void:
 		debug_input()
 
 func _physics_process(_delta: float) -> void:
+	mouse_direction = position.direction_to(get_global_mouse_position()).normalized()
+	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if dashing:
-		velocity = direction * DASH_SPEED
-	else:
-		velocity = direction * SPEED
+
+	velocity = direction * SPEED
 	
 	update_animation_player(direction)
 	if can_move:
 		move_and_slide()
 
 func input():
-	
 	if Input.is_action_just_pressed("melee_attack"):
 		melee_attack()
 		
@@ -59,7 +57,6 @@ func input():
 		
 	if Input.is_action_just_pressed("shoot") and ammo >= 1:
 		shoot()
-		
 
 func debug_input():
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -75,7 +72,7 @@ func melee_attack():
 	if dashing:
 		return
 	
-	animation_tree["parameters/attack/blend_position"] = position.direction_to(get_global_mouse_position()).normalized()
+	animation_tree["parameters/attack/blend_position"] = mouse_direction
 	can_move = false
 	animation_tree["parameters/conditions/attack"] = true
 	await get_tree().create_timer(0.5).timeout
@@ -84,8 +81,13 @@ func melee_attack():
 	
 func dash():
 	dashing = true
-	await get_tree().create_timer(DASH_TIME).timeout
+	can_move = false
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", position + mouse_direction * DASH_DISTANCE, DASH_TIME)
+	
 	dashing = false
+	can_move = true
 	
 func shoot():
 	if dashing:
@@ -96,21 +98,21 @@ func shoot():
 	can_move = true
 
 func update_animation_player(direction):
-	if direction != Vector2.ZERO:
-		#animation_tree["parameters/attack/blend_position"] = direction
-		animation_tree["parameters/dash/blend_position"] = direction
+	# Blend Positioning
+	animation_tree["parameters/idle/blend_position"] = mouse_direction
+	animation_tree["parameters/move/blend_position"] = direction
+	animation_tree["parameters/dash/blend_position"] = mouse_direction
+	
+	# If player is idle, face mouse. If player is moving, face movement direction
+	if direction == Vector2.ZERO:
+		animation_tree["parameters/hurt/blend_position"] = mouse_direction
+		animation_tree["parameters/death/blend_position"] = mouse_direction
+	else:
 		animation_tree["parameters/death/blend_position"] = direction
 		animation_tree["parameters/hurt/blend_position"] = direction
-		animation_tree["parameters/move/blend_position"] = direction
-	else:
-		animation_tree["parameters/idle/blend_position"] = position.direction_to(get_global_mouse_position()).normalized()
-		animation_tree["parameters/hurt/blend_position"] = position.direction_to(get_global_mouse_position()).normalized()
-		animation_tree["parameters/death/blend_position"] = position.direction_to(get_global_mouse_position()).normalized()
-		
 	
 	animation_tree.set("parameters/conditions/idle", velocity == Vector2.ZERO and not dashing)
 	animation_tree.set("parameters/conditions/moving", velocity != Vector2.ZERO and not dashing)
-	animation_tree.set("parameters/conditions/dash", dashing)
 
 func heal(value):
 	health += value
