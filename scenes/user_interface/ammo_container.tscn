@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm46urxvpgo2l"]
+
+[ext_resource type="Script" uid="uid://drih3e307fah6" path="res://scripts/user_interface/ammo_container.gd" id="1_7noh8"]
+
+[node name="AmmoContainer" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.0157407
+script = ExtResource("1_7noh8")
+metadata/_edit_use_anchors_ = true

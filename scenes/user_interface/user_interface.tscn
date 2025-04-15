@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmbrubox4uhsd"]
+[gd_scene load_steps=5 format=3 uid="uid://bmbrubox4uhsd"]
 
 [ext_resource type="Script" uid="uid://dkmfjla0f2vig" path="res://scripts/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="Texture2D" uid="uid://b6ddqhss3na15" path="res://art/weapons/placeholder_crosshair.png" id="2_e2uov"]
 [ext_resource type="PackedScene" uid="uid://dsy15flp4y5bm" path="res://scenes/user_interface/health_container.tscn" id="3_cj8yd"]
+[ext_resource type="PackedScene" uid="uid://cm46urxvpgo2l" path="res://scenes/user_interface/ammo_container.tscn" id="4_2dtu1"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -20,3 +21,12 @@ follow_viewport_enabled = true
 texture = ExtResource("2_e2uov")
 
 [node name="healthContainer" parent="CanvasLayer" instance=ExtResource("3_cj8yd")]
+custom_minimum_size = Vector2(0, 64)
+anchor_right = 0.0338542
+anchor_bottom = 0.0592593
+offset_right = -1.0
+
+[node name="AmmoContainer" parent="CanvasLayer" instance=ExtResource("4_2dtu1")]
+custom_minimum_size = Vector2(0, 32)
+anchor_top = 0.0601852
+anchor_bottom = 0.0898148

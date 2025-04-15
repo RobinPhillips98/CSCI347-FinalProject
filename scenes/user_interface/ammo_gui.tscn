@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://gm8sw1h1msaj"]
+
+[ext_resource type="Script" uid="uid://cg2o64cg4m1g8" path="res://scripts/user_interface/ammo_gui.gd" id="1_xff75"]
+[ext_resource type="Texture2D" uid="uid://dc4d1x8n8h6ee" path="res://art/user_interface/placeholder_ammo.png" id="2_8pmsj"]
+
+[node name="AmmoGUI" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = -1
+anchor_right = 0.0166667
+anchor_bottom = 0.0296296
+script = ExtResource("1_xff75")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_8pmsj")
+centered = false
+hframes = 4
+frame = 3

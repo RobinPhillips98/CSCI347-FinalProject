@@ -4,12 +4,15 @@ extends Area2D
 @onready var shooting_point = %ShootingPoint
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_global_mouse_position())	
+	look_at(get_global_mouse_position())
 	
 func shoot():
 	if player.ammo <= 0:
 		return
 	player.ammo -= 1
+	
+	if player.ammo < 0:
+		player.ammo = 0
 	
 	const BULLET = preload("res://scenes/equipment/bullet.tscn")
 	var new_bullet = BULLET.instantiate()
