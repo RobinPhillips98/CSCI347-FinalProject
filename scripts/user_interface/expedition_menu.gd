@@ -27,7 +27,7 @@ func update_destination() -> void:
 func _destination_one_selected() -> void:
 	if false or debug_level_select:
 		destination = "Destination One"
-		selected_level = preload("res://scenes/player.tscn")
+		selected_level = preload("res://scenes/Testing/test_level.tscn")
 	else:
 		return
 

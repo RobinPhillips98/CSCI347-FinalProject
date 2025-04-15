@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://byghfc7sih31i"]
+
+[ext_resource type="Script" uid="uid://byj88gvodlfad" path="res://scripts/test_dummy.gd" id="1_p43bn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gionw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amttc"]
+size = Vector2(74, 122)
+
+[node name="TestDummy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_p43bn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(74, 122)
+texture = SubResource("PlaceholderTexture2D_gionw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_amttc")

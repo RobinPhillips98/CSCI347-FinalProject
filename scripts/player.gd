@@ -1,35 +1,36 @@
 extends CharacterBody2D
 
-# Base numbers
+# Max numbers
 var max_health: int = 5
-var max_shield: float = 0.0
-var max_stamina: float = 50.0
-var max_ammo: int = 5
+var max_ammo: int = 10
 
 # Attributes
 var health: int = max_health
-var shield: float = max_shield
-var stamina: float = max_stamina
-var stamina_regen_rate: float = 25
+
+# Equipment
 var ammo: int = max_ammo
+var sword_damage: int = 1
 
 # Movement
-const SPEED = 1000
-const DASH_DISTANCE = 1000
-const DASH_TIME = 0.4
+const SPEED: int = 1000
+const DASH_SPEED = SPEED * 3
+const DASH_TIME = 0.3
 
 # State Control
 var dashing: bool = false
 var can_move: bool = true
+var mouse_direction: Vector2
+var dash_direction: Vector2
 signal health_changed
-var mouse_direction
+signal ammo_changed
 
 # Node References
-@onready var gun = $Gun
+@onready var gun: Node2D = $Gun
 @onready var animation_tree = $AnimationTree
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	animation_tree.active = true
 
 func _process(_delta: float) -> void:
 	input()
@@ -41,11 +42,15 @@ func _physics_process(_delta: float) -> void:
 	mouse_direction = position.direction_to(get_global_mouse_position()).normalized()
 	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-
-	velocity = direction * SPEED
 	
+	if dashing:
+		velocity = dash_direction * DASH_SPEED
+	else:
+		velocity = direction * SPEED
+		
 	update_animation_player(direction)
-	if can_move:
+	
+	if can_move or dashing:
 		move_and_slide()
 
 func input():
@@ -75,26 +80,33 @@ func melee_attack():
 	animation_tree["parameters/attack/blend_position"] = mouse_direction
 	can_move = false
 	animation_tree["parameters/conditions/attack"] = true
+	
 	await get_tree().create_timer(0.5).timeout
+	
 	animation_tree["parameters/conditions/attack"] = false
 	can_move = true
 	
 func dash():
 	dashing = true
 	can_move = false
+	animation_tree["parameters/conditions/dash"] = true
 	
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", position + mouse_direction * DASH_DISTANCE, DASH_TIME)
+	dash_direction = mouse_direction
+	await get_tree().create_timer(DASH_TIME).timeout
 	
 	dashing = false
 	can_move = true
+	animation_tree["parameters/conditions/dash"] = false
 	
 func shoot():
 	if dashing:
 		return
 	
 	can_move = false
+	
 	gun.shoot()
+	ammo_changed.emit()
+	
 	can_move = true
 
 func update_animation_player(direction):
@@ -142,3 +154,15 @@ func die():
 	animation_tree["parameters/conditions/dead"] = true
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/colony/colony.tscn")
+
+func gain_ammo(value):
+	ammo += value
+	if ammo > max_ammo:
+		ammo = max_ammo
+		
+	ammo_changed.emit()
+
+func _on_sword_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(sword_damage)
+		gain_ammo(1)
