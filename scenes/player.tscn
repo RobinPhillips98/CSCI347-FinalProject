@@ -713,6 +713,10 @@ position = Vector2(-8, 101)
 shape = SubResource("RectangleShape2D_qlg0r")
 disabled = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+
 [connection signal="ammo_changed" from="." to="UserInterface" method="_on_player_ammo_changed"]
 [connection signal="health_changed" from="." to="UserInterface" method="_on_player_health_changed"]
 [connection signal="medkits_changed" from="." to="UserInterface" method="_on_player_medkits_changed"]
