@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://beoyc5o21by0v"]
 
 [ext_resource type="Texture2D" uid="uid://dgbm7x2qpluvt" path="res://art/user_interface/placeholder_health.png" id="1_5wny4"]
-[ext_resource type="Script" uid="uid://ded0c1enyj2k2" path="res://scripts/user_interface/health_gui.gd" id="1_oyjub"]
+[ext_resource type="Script" uid="uid://ded0c1enyj2k2" path="res://scripts/user_interface/status_containers/health_gui.gd" id="1_oyjub"]
 
 [node name="health_gui" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

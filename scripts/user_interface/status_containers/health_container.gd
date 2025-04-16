@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var health_gui = preload("res://scenes/user_interface/health_gui.tscn")
+@onready var health_gui = preload("res://scenes/user_interface/status_containers/health_gui.tscn")
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:

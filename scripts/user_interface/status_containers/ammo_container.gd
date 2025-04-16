@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var ammo_gui = preload("res://scenes/user_interface/ammo_gui.tscn")
+@onready var ammo_gui = preload("res://scenes/user_interface/status_containers/ammo_gui.tscn")
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:

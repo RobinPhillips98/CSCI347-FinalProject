@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://06q0k4bgs86j"]
 
-[ext_resource type="Script" uid="uid://byqniubed1h2a" path="res://scripts/user_interface/expedition_menu.gd" id="1_4dwrf"]
-[ext_resource type="Theme" uid="uid://c4pq52novvusq" path="res://resources/themes/button_text.tres" id="1_bb0vt"]
-[ext_resource type="Theme" uid="uid://bgpv23m6jitmg" path="res://resources/themes/menu_text.tres" id="1_get17"]
-[ext_resource type="ButtonGroup" uid="uid://dtkw40f6hviuv" path="res://resources/button_groups/expedition_menu.tres" id="4_v4thc"]
-[ext_resource type="Theme" uid="uid://cv508bgx6ijpt" path="res://resources/themes/top_bar_text.tres" id="6_0g0n1"]
+[ext_resource type="Script" uid="uid://byqniubed1h2a" path="res://scripts/menus/expedition_menu.gd" id="1_g5sao"]
+[ext_resource type="Theme" uid="uid://bgpv23m6jitmg" path="res://resources/themes/menu_text.tres" id="2_stsj2"]
+[ext_resource type="Theme" uid="uid://c4pq52novvusq" path="res://resources/themes/button_text.tres" id="3_f4nnq"]
+[ext_resource type="ButtonGroup" uid="uid://dtkw40f6hviuv" path="res://resources/button_groups/expedition_menu.tres" id="4_28i0h"]
+[ext_resource type="Theme" uid="uid://cv508bgx6ijpt" path="res://resources/themes/top_bar_text.tres" id="5_aor7h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qvsit"]
 
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4dwrf")
+script = ExtResource("1_g5sao")
 debug_level_select = true
 
 [node name="Background" type="TextureRect" parent="."]
@@ -82,7 +82,7 @@ anchors_preset = -1
 anchor_right = 0.629214
 anchor_bottom = 0.204678
 offset_right = -1.52588e-05
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Explorer: John Doe"
 metadata/_edit_use_anchors_ = true
 
@@ -94,7 +94,7 @@ anchor_right = 0.603933
 anchor_bottom = 0.949429
 offset_right = 1.52588e-05
 grow_vertical = 2
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Benefit: Adds +5 damage to all weapons"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -121,7 +121,7 @@ anchor_right = 0.524871
 anchor_bottom = 0.907692
 offset_right = -1.52588e-05
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Resources: 1000¤"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -134,7 +134,7 @@ anchor_top = 0.892308
 anchor_right = 0.528302
 anchor_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Required Energy: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -211,7 +211,7 @@ anchors_preset = -1
 anchor_right = 0.629214
 anchor_bottom = 0.204678
 offset_right = -1.52588e-05
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Explorer: John Doe"
 metadata/_edit_use_anchors_ = true
 
@@ -223,7 +223,7 @@ anchor_right = 0.603933
 anchor_bottom = 0.949429
 offset_right = 1.52588e-05
 grow_vertical = 2
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Benefit: Adds +5 damage to all weapons"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -250,7 +250,7 @@ anchor_right = 0.524871
 anchor_bottom = 0.907692
 offset_right = -1.52588e-05
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Resources: 1000¤"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -263,7 +263,7 @@ anchor_top = 0.892308
 anchor_right = 0.528302
 anchor_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Required Energy: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -340,7 +340,7 @@ anchors_preset = -1
 anchor_right = 0.629214
 anchor_bottom = 0.204678
 offset_right = -1.52588e-05
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Explorer: John Doe"
 metadata/_edit_use_anchors_ = true
 
@@ -352,7 +352,7 @@ anchor_right = 0.603933
 anchor_bottom = 0.949429
 offset_right = 1.52588e-05
 grow_vertical = 2
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Benefit: Adds +5 damage to all weapons"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -379,7 +379,7 @@ anchor_right = 0.524871
 anchor_bottom = 0.907692
 offset_right = -1.52588e-05
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Resources: 1000¤"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -392,7 +392,7 @@ anchor_top = 0.892308
 anchor_right = 0.528302
 anchor_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Required Energy: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -470,7 +470,7 @@ anchors_preset = -1
 anchor_right = 0.629214
 anchor_bottom = 0.204678
 offset_right = -1.52588e-05
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Explorer: John Doe"
 metadata/_edit_use_anchors_ = true
 
@@ -482,7 +482,7 @@ anchor_right = 0.603933
 anchor_bottom = 0.949429
 offset_right = 1.52588e-05
 grow_vertical = 2
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Benefit: Adds +5 damage to all weapons"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -509,7 +509,7 @@ anchor_right = 0.524871
 anchor_bottom = 0.907692
 offset_right = -1.52588e-05
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Resources: 1000¤"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -522,7 +522,7 @@ anchor_top = 0.892308
 anchor_right = 0.528302
 anchor_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Required Energy: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -600,7 +600,7 @@ anchors_preset = -1
 anchor_right = 0.629214
 anchor_bottom = 0.204678
 offset_right = -1.52588e-05
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Explorer: John Doe"
 metadata/_edit_use_anchors_ = true
 
@@ -612,7 +612,7 @@ anchor_right = 0.603933
 anchor_bottom = 0.949429
 offset_right = 1.52588e-05
 grow_vertical = 2
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Benefit: Adds +5 damage to all weapons"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -639,7 +639,7 @@ anchor_right = 0.524871
 anchor_bottom = 0.907692
 offset_right = -1.52588e-05
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Resources: 1000¤"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -652,7 +652,7 @@ anchor_top = 0.892308
 anchor_right = 0.528302
 anchor_bottom = 1.0
 grow_vertical = 0
-theme = ExtResource("1_get17")
+theme = ExtResource("2_stsj2")
 text = "Required Energy: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -702,9 +702,9 @@ anchor_right = 0.384896
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_bb0vt")
+theme = ExtResource("3_f4nnq")
 toggle_mode = true
-button_group = ExtResource("4_v4thc")
+button_group = ExtResource("4_28i0h")
 text = "Destinations"
 metadata/_edit_use_anchors_ = true
 
@@ -717,9 +717,9 @@ anchor_right = 0.767708
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_bb0vt")
+theme = ExtResource("3_f4nnq")
 toggle_mode = true
-button_group = ExtResource("4_v4thc")
+button_group = ExtResource("4_28i0h")
 text = "Equipment"
 metadata/_edit_use_anchors_ = true
 
@@ -732,7 +732,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_bb0vt")
+theme = ExtResource("3_f4nnq")
 text = "LAUNCH!"
 metadata/_edit_use_anchors_ = true
 
@@ -743,7 +743,7 @@ anchor_left = 0.798958
 anchor_right = 1.0
 anchor_bottom = 0.134259
 grow_horizontal = 0
-theme = ExtResource("1_bb0vt")
+theme = ExtResource("3_f4nnq")
 text = "<-- Back"
 metadata/_edit_use_anchors_ = true
 
@@ -754,7 +754,7 @@ anchor_left = 0.572917
 anchor_top = 0.756481
 anchor_right = 1.00052
 anchor_bottom = 0.82963
-theme = ExtResource("6_0g0n1")
+theme = ExtResource("5_aor7h")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Destination: Select a destination..."

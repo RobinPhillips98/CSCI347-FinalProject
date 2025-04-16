@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dkmfjla0f2vig" path="res://scripts/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="Texture2D" uid="uid://b6ddqhss3na15" path="res://art/weapons/placeholder_crosshair.png" id="2_e2uov"]
-[ext_resource type="PackedScene" uid="uid://dsy15flp4y5bm" path="res://scenes/user_interface/health_container.tscn" id="3_cj8yd"]
-[ext_resource type="PackedScene" uid="uid://cm46urxvpgo2l" path="res://scenes/user_interface/ammo_container.tscn" id="4_2dtu1"]
+[ext_resource type="PackedScene" uid="uid://dsy15flp4y5bm" path="res://scenes/user_interface/status_containers/health_container.tscn" id="3_cj8yd"]
+[ext_resource type="PackedScene" uid="uid://cm46urxvpgo2l" path="res://scenes/user_interface/status_containers/ammo_container.tscn" id="4_2dtu1"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
