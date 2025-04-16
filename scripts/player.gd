@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Max numbers
 var max_health: int = 5
 var max_ammo: int = 10
+var max_medkits: int = 3
 
 # Attributes
 var health: int = max_health
@@ -10,6 +11,7 @@ var health: int = max_health
 # Equipment
 var ammo: int = max_ammo
 var sword_damage: int = 1
+var medkits: int = max_medkits
 
 # Movement
 const SPEED: int = 1000
@@ -21,8 +23,11 @@ var dashing: bool = false
 var can_move: bool = true
 var mouse_direction: Vector2
 var dash_direction: Vector2
+
+# Signals
 signal health_changed
 signal ammo_changed
+signal medkits_changed
 
 # Node References
 @onready var gun: Node2D = $Gun
@@ -62,6 +67,9 @@ func input():
 		
 	if Input.is_action_just_pressed("shoot") and ammo >= 1:
 		shoot()
+		
+	if Input.is_action_just_pressed("medkit") and medkits >= 1:
+		use_medkit()
 
 func debug_input():
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -159,8 +167,27 @@ func gain_ammo(value):
 	ammo += value
 	if ammo > max_ammo:
 		ammo = max_ammo
-		
+	
 	ammo_changed.emit()
+
+func use_medkit():
+	if health >= max_health:
+		return
+	
+	medkits -= 1
+	
+	if medkits < 0:
+		medkits = 0
+	
+	heal(max_health)
+	medkits_changed.emit()
+	
+func gain_medkit():
+	medkits += 1
+	if medkits > max_medkits:
+		medkits = max_medkits
+	
+	medkits_changed.emit()
 
 func _on_sword_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):

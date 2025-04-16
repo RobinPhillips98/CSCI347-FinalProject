@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb1gn42rnjrh1"]
+
+[ext_resource type="Script" uid="uid://dxel1hbgeln31" path="res://scripts/user_interface/status_containers/medkit_gui.gd" id="1_164ak"]
+[ext_resource type="Texture2D" uid="uid://dxb3436n8bs22" path="res://art/user_interface/placeholder_medkit_counter.png" id="2_jtbtl"]
+
+[node name="MedkitGUI" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.0166667
+anchor_bottom = 0.0296296
+script = ExtResource("1_164ak")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_jtbtl")
+centered = false
+hframes = 4
+frame = 3

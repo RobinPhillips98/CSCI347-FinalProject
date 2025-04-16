@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmbrubox4uhsd"]
+[gd_scene load_steps=6 format=3 uid="uid://bmbrubox4uhsd"]
 
 [ext_resource type="Script" uid="uid://dkmfjla0f2vig" path="res://scripts/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="Texture2D" uid="uid://b6ddqhss3na15" path="res://art/weapons/placeholder_crosshair.png" id="2_e2uov"]
 [ext_resource type="PackedScene" uid="uid://dsy15flp4y5bm" path="res://scenes/user_interface/status_containers/health_container.tscn" id="3_cj8yd"]
 [ext_resource type="PackedScene" uid="uid://cm46urxvpgo2l" path="res://scenes/user_interface/status_containers/ammo_container.tscn" id="4_2dtu1"]
+[ext_resource type="PackedScene" uid="uid://bb1gn42rnjrh1" path="res://scenes/user_interface/status_containers/medkit_gui.tscn" id="5_f1hci"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -14,11 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e2uov")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Crosshair" type="Sprite2D" parent="CanvasLayer"]
+[node name="Crosshair" type="Sprite2D" parent="."]
 texture = ExtResource("2_e2uov")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="healthContainer" parent="CanvasLayer" instance=ExtResource("3_cj8yd")]
 custom_minimum_size = Vector2(0, 64)
@@ -30,3 +30,12 @@ offset_right = -1.0
 custom_minimum_size = Vector2(0, 32)
 anchor_top = 0.0601852
 anchor_bottom = 0.0898148
+offset_bottom = 3.8147e-05
+
+[node name="MedkitGUI" parent="CanvasLayer" instance=ExtResource("5_f1hci")]
+anchor_top = 0.940741
+anchor_right = 0.0333333
+anchor_bottom = 1.0
+offset_top = -0.000305176
+offset_right = 6.10352e-05
+grow_vertical = 0

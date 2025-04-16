@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://7orgyfhhybgh"]
+[gd_scene load_steps=4 format=3 uid="uid://7orgyfhhybgh"]
 
 [ext_resource type="PackedScene" uid="uid://dm83iil1q2whm" path="res://scenes/player.tscn" id="1_uivxf"]
 [ext_resource type="PackedScene" uid="uid://byghfc7sih31i" path="res://scenes/testing/test_dummy.tscn" id="2_xfpkm"]
+[ext_resource type="PackedScene" uid="uid://diplkc3ume1lf" path="res://scenes/equipment/medkit.tscn" id="3_6gmxw"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(93, 112)
 
 [node name="TestDummy" parent="." instance=ExtResource("2_xfpkm")]
 position = Vector2(1043, 169)
+
+[node name="Medkit" parent="." instance=ExtResource("3_6gmxw")]
+position = Vector2(480, 217)

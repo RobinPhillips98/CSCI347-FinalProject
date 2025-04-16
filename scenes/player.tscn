@@ -667,6 +667,8 @@ size = Vector2(79, 178)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_3vyb7")
 
+[node name="UserInterface" parent="." instance=ExtResource("2_qhqgy")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3.5, 5.478)
 texture = ExtResource("2_dqkch")
@@ -700,8 +702,6 @@ parameters/move/blend_position = Vector2(0, 0)
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_fdfoy")
 
-[node name="UserInterface" parent="." instance=ExtResource("2_qhqgy")]
-
 [node name="Gun" parent="." instance=ExtResource("4_dqkch")]
 
 [node name="Sword" type="Area2D" parent="."]
@@ -715,4 +715,5 @@ disabled = true
 
 [connection signal="ammo_changed" from="." to="UserInterface" method="_on_player_ammo_changed"]
 [connection signal="health_changed" from="." to="UserInterface" method="_on_player_health_changed"]
+[connection signal="medkits_changed" from="." to="UserInterface" method="_on_player_medkits_changed"]
 [connection signal="body_entered" from="Sword" to="." method="_on_sword_body_entered"]
